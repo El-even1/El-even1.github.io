@@ -1,6 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>简单配置FTP服务器</title>
+    <url>/2024/10/29/CreateFTP/</url>
+    <content><![CDATA[<p>本文介绍了简单的配置FTP服务器的方法</p>
+<span id="more"></span>
+<h1 id="配置方法"><a href="#配置方法" class="headerlink" title="配置方法"></a>配置方法</h1><h2 id="主机配置"><a href="#主机配置" class="headerlink" title="主机配置"></a>主机配置</h2><ol>
+<li>打开控制面板，并点击配置<br> <img src="/2024/10/29/CreateFTP/1FTP-01.png" alt="控制面板" title="控制面板"></li>
+<li>选中如下选项，并点击确认，随后等待重启<br> <img src="/2024/10/29/CreateFTP/1FTP-02.png" alt="功能" title="功能"></li>
+<li>打开任务栏搜索框，搜索IIS,并打开IIS<br> <img src="/2024/10/29/CreateFTP/1FTP-03.png" alt="IIS" title="IIS"></li>
+<li>在IIS界面，右键单击网站，点击添加FTP站点。<br>输入任意站点名称和共享文件夹地址<br> <img src="/2024/10/29/CreateFTP/1FTP-04.png" alt="IIS" title="IIS"></li>
+<li>输入ip地址，如果有多个ip地址不知道选哪个，可以在cmd中输入ipconfig来查看.<br>端口使用默认端口21即可，SSL选择无SSL。<br> <img src="/2024/10/29/CreateFTP/1FTP-05.png" alt="IIS" title="IIS"><br> <img src="/2024/10/29/CreateFTP/1FTP-06.png" alt="IIS" title="IIS"></li>
+<li>接着按照图示勾选<br> <img src="/2024/10/29/CreateFTP/1FTP-07.png" alt="IIS" title="IIS"></li>
+<li>在文件资源管理器中输入 <a href="ftp://169.254.247.92/">ftp://169.254.247.92</a> (ftp:&#x2F;&#x2F;自己的ip地址)<br> <img src="/2024/10/29/CreateFTP/1FTP-01.gif" alt="IIS" title="IIS"></li>
+</ol>
+]]></content>
+      <tags>
+        <tag>FTP</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Test1</title>
     <url>/2024/10/23/Test1/</url>
     <content><![CDATA[]]></content>

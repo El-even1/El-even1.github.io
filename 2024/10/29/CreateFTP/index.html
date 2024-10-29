@@ -19,27 +19,37 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="本文介绍了简单的配置FTP服务器的方法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2024/10/23/hello-world/index.html">
+<meta property="og:title" content="简单配置FTP服务器">
+<meta property="og:url" content="http://example.com/2024/10/29/CreateFTP/index.html">
 <meta property="og:site_name" content="Eleven&#39;s Blog">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="本文介绍了简单的配置FTP服务器的方法">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-10-23T14:10:58.337Z">
-<meta property="article:modified_time" content="2024-10-23T14:10:58.337Z">
+<meta property="og:image" content="http://example.com/2024/10/29/CreateFTP/1FTP-01.png">
+<meta property="og:image" content="http://example.com/2024/10/29/CreateFTP/1FTP-02.png">
+<meta property="og:image" content="http://example.com/2024/10/29/CreateFTP/1FTP-03.png">
+<meta property="og:image" content="http://example.com/2024/10/29/CreateFTP/1FTP-04.png">
+<meta property="og:image" content="http://example.com/2024/10/29/CreateFTP/1FTP-05.png">
+<meta property="og:image" content="http://example.com/2024/10/29/CreateFTP/1FTP-06.png">
+<meta property="og:image" content="http://example.com/2024/10/29/CreateFTP/1FTP-07.png">
+<meta property="og:image" content="http://example.com/2024/10/29/CreateFTP/1FTP-01.gif">
+<meta property="article:published_time" content="2024-10-29T04:51:39.000Z">
+<meta property="article:modified_time" content="2024-10-29T08:53:08.462Z">
 <meta property="article:author" content="Eleven">
+<meta property="article:tag" content="FTP">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/10/29/CreateFTP/1FTP-01.png">
 
 
-<link rel="canonical" href="http://example.com/2024/10/23/hello-world/">
+<link rel="canonical" href="http://example.com/2024/10/29/CreateFTP/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/10/23/hello-world/","path":"2024/10/23/hello-world/","title":"Hello World"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2024/10/29/CreateFTP/","path":"2024/10/29/CreateFTP/","title":"简单配置FTP服务器"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hello World | Eleven's Blog</title>
+<title>简单配置FTP服务器 | Eleven's Blog</title>
   
 
 
@@ -111,7 +121,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">配置方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE"><span class="nav-number">1.1.</span> <span class="nav-text">主机配置</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -176,7 +186,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/10/23/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/10/29/CreateFTP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar_bala.jpg">
@@ -189,12 +199,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Hello World | Eleven's Blog">
+      <meta itemprop="name" content="简单配置FTP服务器 | Eleven's Blog">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hello World
+          简单配置FTP服务器
         </h1>
 
         <div class="post-meta-container">
@@ -204,8 +214,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2024-10-23 22:10:58" itemprop="dateCreated datePublished" datetime="2024-10-23T22:10:58+08:00">2024-10-23</time>
+      <time title="创建时间：2024-10-29 12:51:39 / 修改时间：16:53:08" itemprop="dateCreated datePublished" datetime="2024-10-29T12:51:39+08:00">2024-10-29</time>
     </span>
 
   
@@ -217,19 +228,17 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+    <div class="post-body" itemprop="articleBody"><p>本文介绍了简单的配置FTP服务器的方法</p>
+<span id="more"></span>
+<h1 id="配置方法"><a href="#配置方法" class="headerlink" title="配置方法"></a>配置方法</h1><h2 id="主机配置"><a href="#主机配置" class="headerlink" title="主机配置"></a>主机配置</h2><ol>
+<li>打开控制面板，并点击配置<br> <img src="/2024/10/29/CreateFTP/1FTP-01.png" alt="控制面板" title="控制面板"></li>
+<li>选中如下选项，并点击确认，随后等待重启<br> <img src="/2024/10/29/CreateFTP/1FTP-02.png" alt="功能" title="功能"></li>
+<li>打开任务栏搜索框，搜索IIS,并打开IIS<br> <img src="/2024/10/29/CreateFTP/1FTP-03.png" alt="IIS" title="IIS"></li>
+<li>在IIS界面，右键单击网站，点击添加FTP站点。<br>输入任意站点名称和共享文件夹地址<br> <img src="/2024/10/29/CreateFTP/1FTP-04.png" alt="IIS" title="IIS"></li>
+<li>输入ip地址，如果有多个ip地址不知道选哪个，可以在cmd中输入ipconfig来查看.<br>端口使用默认端口21即可，SSL选择无SSL。<br> <img src="/2024/10/29/CreateFTP/1FTP-05.png" alt="IIS" title="IIS"><br> <img src="/2024/10/29/CreateFTP/1FTP-06.png" alt="IIS" title="IIS"></li>
+<li>接着按照图示勾选<br> <img src="/2024/10/29/CreateFTP/1FTP-07.png" alt="IIS" title="IIS"></li>
+<li>在文件资源管理器中输入 <a href="ftp://169.254.247.92/">ftp://169.254.247.92</a> (ftp:&#x2F;&#x2F;自己的ip地址)<br> <img src="/2024/10/29/CreateFTP/1FTP-01.gif" alt="IIS" title="IIS"></li>
+</ol>
 
     </div>
 
@@ -238,16 +247,19 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/FTP/" rel="tag"># FTP</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2024/10/23/Test1/" rel="prev" title="Test1">
+                  <i class="fa fa-angle-left"></i> Test1
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2024/10/23/Test1/" rel="next" title="Test1">
-                  Test1 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
