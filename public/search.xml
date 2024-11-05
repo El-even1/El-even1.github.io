@@ -26,7 +26,7 @@
 </ol>
 <h2 id="防火墙设置"><a href="#防火墙设置" class="headerlink" title="防火墙设置"></a>防火墙设置</h2><ol>
 <li>打开防火墙，点击<code>允许应用通过防火墙</code><br> <img src="/2024/10/29/CreateFTP/1FTP-08.png"></li>
-<li>先点击<code>更改设置</code>，找到<code>FTP</code>并勾选<br> <img src="/2024/10/29/CreateFTP/1FTP-09.png">#</li>
+<li>先点击<code>更改设置</code>，找到<code>FTP</code>并勾选<br> <img src="/2024/10/29/CreateFTP/1FTP-09.png"></li>
 <li>添加<code>&quot;C:\Windows\System32\svchost.exe&quot;</code>，即<code>Windows服务主进程</code><br> <img src="/2024/10/29/CreateFTP/1FTP-10.png"><br> <img src="/2024/10/29/CreateFTP/1FTP-11.png"></li>
 <li>勾选<code>专用</code> <code>公用</code>，点击确定<br> <img src="/2024/10/29/CreateFTP/1FTP-12.png"></li>
 </ol>
