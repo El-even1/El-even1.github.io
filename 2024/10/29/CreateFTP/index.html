@@ -19,48 +19,48 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/pink/pace-theme-loading-bar.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"el-even1.github.io.com","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":{"valine":{"order":-1}}},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/./public/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"el-even1.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.21.0","exturl":false,"sidebar":{"position":"right","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"copycode":{"enable":true,"style":"mac"},"fold":{"enable":true,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":{"valine":{"order":-1}}},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"},"path":"/./public/search.xml","localsearch":{"enable":true,"top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="今天室友想要面对面传点东西，但是1G以上的文件不能上传，于是想找一个可以在局域网内快速传输文件的方法，正好前两天看到了快速搭建FTP的教程，于是打算上手尝试一下。最后在室友的建议下使用了RadminLAN来测试连接。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="简单配置FTP服务器，并用RadminLAN测试">
-<meta property="og:url" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/index.html">
+<meta property="og:url" content="http://el-even1.github.io/2024/10/29/CreateFTP/index.html">
 <meta property="og:site_name" content="Eleven&#39;s Blog">
 <meta property="og:description" content="今天室友想要面对面传点东西，但是1G以上的文件不能上传，于是想找一个可以在局域网内快速传输文件的方法，正好前两天看到了快速搭建FTP的教程，于是打算上手尝试一下。最后在室友的建议下使用了RadminLAN来测试连接。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-01.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-02.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-03.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-04.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-13.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-05.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-14.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-06.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-07.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-01.gif">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-08.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-09.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-10.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-11.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-12.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-15.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-16.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-17.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-18.png">
-<meta property="og:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-19.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-01.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-02.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-03.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-04.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-13.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-05.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-14.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-06.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-07.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-01.gif">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-08.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-09.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-10.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-11.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-12.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-15.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-16.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-17.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-18.png">
+<meta property="og:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-19.png">
 <meta property="article:published_time" content="2024-10-29T04:51:39.000Z">
 <meta property="article:modified_time" content="2024-11-01T01:33:21.378Z">
 <meta property="article:author" content="Eleven">
 <meta property="article:tag" content="FTP">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://el-even1.github.io.com/2024/10/29/CreateFTP/1FTP-01.png">
+<meta name="twitter:image" content="http://el-even1.github.io/2024/10/29/CreateFTP/1FTP-01.png">
 
 
-<link rel="canonical" href="http://el-even1.github.io.com/2024/10/29/CreateFTP/">
+<link rel="canonical" href="http://el-even1.github.io/2024/10/29/CreateFTP/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://el-even1.github.io.com/2024/10/29/CreateFTP/","path":"2024/10/29/CreateFTP/","title":"简单配置FTP服务器，并用RadminLAN测试"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://el-even1.github.io/2024/10/29/CreateFTP/","path":"2024/10/29/CreateFTP/","title":"简单配置FTP服务器，并用RadminLAN测试"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>简单配置FTP服务器，并用RadminLAN测试 | Eleven's Blog</title>
@@ -232,7 +232,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://el-even1.github.io.com/2024/10/29/CreateFTP/">
+    <link itemprop="mainEntityOfPage" href="http://el-even1.github.io/2024/10/29/CreateFTP/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/uploads/avatar_bala.jpg">
@@ -354,7 +354,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://el-even1.github.io.com/2024/10/29/CreateFTP/" title="简单配置FTP服务器，并用RadminLAN测试">http://el-even1.github.io.com/2024/10/29/CreateFTP/</a>
+      <a href="http://el-even1.github.io/2024/10/29/CreateFTP/" title="简单配置FTP服务器，并用RadminLAN测试">http://el-even1.github.io/2024/10/29/CreateFTP/</a>
   </li>
   <li class="post-copyright-license">
       <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
