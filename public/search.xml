@@ -1,61 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>简单配置FTP服务器，并用RadminLAN测试</title>
-    <url>/2024/10/29/CreateFTP/</url>
-    <content><![CDATA[<p>今天室友想要面对面传点东西，但是1G以上的文件不能上传，于是想找一个可以在局域网内快速传输文件的方法，正好前两天看到了快速搭建FTP的教程，于是打算上手尝试一下。最后在室友的建议下使用了RadminLAN来测试连接。</p>
-<span id="more"></span>
-<h1 id="配置方法"><a href="#配置方法" class="headerlink" title="配置方法"></a>配置方法</h1><h2 id="主机搭建FTP服务"><a href="#主机搭建FTP服务" class="headerlink" title="主机搭建FTP服务"></a>主机搭建FTP服务</h2><ol>
-<li><p>打开控制面板，查询<code>功能</code>，点击<code>启用或关闭Windows功能</code><br> <img src="/2024/10/29/CreateFTP/1FTP-01.png">   </p>
-</li>
-<li><p>勾选<code>Internet Infermation Services</code>，<code>FTP服务器</code>并点击确认，随后等待重启<br> <img src="/2024/10/29/CreateFTP/1FTP-02.png" alt="功能" title="功能"></p>
-</li>
-<li><p>打开任务栏搜索框，搜索并打开<code>IIS</code><br> <img src="/2024/10/29/CreateFTP/1FTP-03.png"></p>
-</li>
-<li><p>在IIS界面，右键单击网站，点击添加FTP站点。<br>输入任意站点名称和共享文件夹地址,点击下一步<br> <img src="/2024/10/29/CreateFTP/1FTP-04.png"><br> <img src="/2024/10/29/CreateFTP/1FTP-13.png"></p>
-</li>
-<li><p>输入ip地址，如果有多个ip地址不知道选哪个，可以在右键单击网络图标，点击<code>网络和Internet设置</code>，查看自己的ip地址<br>端口使用默认端口21即可，SSL选择无SSL。<br> <img src="/2024/10/29/CreateFTP/1FTP-05.png"><br> <img src="/2024/10/29/CreateFTP/1FTP-14.png"><br> <img src="/2024/10/29/CreateFTP/1FTP-06.png"></p>
-</li>
-<li><p>身份验证勾选<code>匿名</code> <code>基本</code>，授权选择<code>所有用户</code>，权限自行勾选<code>读取</code>是可以下载<code>写入</code>是可以上传<br> <img src="/2024/10/29/CreateFTP/1FTP-07.png"></p>
-</li>
-<li><p>在文件资源管理器中输入 <a href="ftp://10.107.79.53/">ftp://10.107.79.53</a> (ftp:&#x2F;&#x2F;自己的ip地址)<br> <img src="/2024/10/29/CreateFTP/1FTP-01.gif"></p>
-<blockquote>
-<p>至此FTP已经搭建完成</p>
-</blockquote>
-</li>
-</ol>
-<h2 id="防火墙设置"><a href="#防火墙设置" class="headerlink" title="防火墙设置"></a>防火墙设置</h2><ol>
-<li>打开防火墙，点击<code>允许应用通过防火墙</code><br> <img src="/2024/10/29/CreateFTP/1FTP-08.png"></li>
-<li>先点击<code>更改设置</code>，找到<code>FTP</code>并勾选<br> <img src="/2024/10/29/CreateFTP/1FTP-09.png"></li>
-<li>添加<code>&quot;C:\Windows\System32\svchost.exe&quot;</code>，即<code>Windows服务主进程</code><br> <img src="/2024/10/29/CreateFTP/1FTP-10.png"><br> <img src="/2024/10/29/CreateFTP/1FTP-11.png"></li>
-<li>勾选<code>专用</code> <code>公用</code>，点击确定<br> <img src="/2024/10/29/CreateFTP/1FTP-12.png"></li>
-</ol>
-<p>防火墙设置完毕，现在局域网内的设备可以访问本机的FTP服务器，并可以下载上传。</p>
-<hr>
-<h1 id="连接测试-Radmin连接"><a href="#连接测试-Radmin连接" class="headerlink" title="连接测试(Radmin连接)"></a>连接测试(Radmin连接)</h1><blockquote>
-<p>由于连接校园网并不在同一个ip下，于是尝试用其他软件代替。手机热点尝试过了也可以用<br>Radmin就是有一点不太好，可能网络会很卡，我和朋友基本上在500~1000延迟，只可以用来传图片玩玩，大一点的传输时间就很长了</p>
-</blockquote>
-<ol>
-<li>在官网<a href="https://www.radmin-lan.cn/">下载RadminLAN软件</a><br> <img src="/2024/10/29/CreateFTP/1FTP-15.png"></li>
-<li>打开RadminLAN，依次点击<code>网络-创建网络</code> 然后输入用户名和密码<br> <img src="/2024/10/29/CreateFTP/1FTP-16.png"></li>
-<li>其他用户点击<code>网络-加入网络</code>输入刚才的用户名和密码，加入网络。(不过延迟真的很高)<br> <img src="/2024/10/29/CreateFTP/1FTP-17.png"></li>
-<li>根据上述教程搭建FTP，ip地址为图示地址<br> <img src="/2024/10/29/CreateFTP/1FTP-18.png"></li>
-<li>接下来主机就可以打开共享文件夹<code>ftp://26.165.27.130</code>或者在自己本地文件夹中添加文件，所有局域网内的用户均可以访问该地址来获取文件(如果没有就点一下刷新)<blockquote>
-<p><code>ftp://26.165.27.130的文件一般不能直接打开，需要拖拽下载到自己电脑之后才能查看</code></p>
-</blockquote>
- <img src="/2024/10/29/CreateFTP/1FTP-19.png"><br> 功能正常运行，可以进行传输。🥳</li>
-</ol>
-<hr>
-<blockquote>
-<p>参考资料</p>
-<ol>
-<li><a href="https://www.bilibili.com/video/BV1AZ4y1b7WU/?spm_id_from=333.880.my_history.page.click&vd_source=910d96431688f003370b14c02b2f5525">b站视频：快速搭建FTP服务器（局域网内文件共享） 【Windows系统 IIS】</a></li>
-<li><a href="https://blog.csdn.net/weixin_46081669/article/details/114037504">csdn博客：windows10搭建FTP服务器，并允许其他电脑访问</a></li>
-</ol>
-</blockquote>
-]]></content>
-      <tags>
-        <tag>FTP</tag>
-      </tags>
-  </entry>
+<search> 
+  
+  
+    
+    <entry>
+      <title>简单配置FTP服务器，并用RadminLAN测试</title>
+      <link href="/2024/10/29/CreateFTP/"/>
+      <url>/2024/10/29/CreateFTP/</url>
+      
+        <content type="html"><![CDATA[<p>今天室友想要面对面传点东西，但是1G以上的文件不能上传，于是想找一个可以在局域网内快速传输文件的方法，正好前两天看到了快速搭建FTP的教程，于是打算上手尝试一下。最后在室友的建议下使用了RadminLAN来测试连接。</p><span id="more"></span><h1 id="配置方法"><a href="#配置方法" class="headerlink" title="配置方法"></a>配置方法</h1><h2 id="主机搭建FTP服务"><a href="#主机搭建FTP服务" class="headerlink" title="主机搭建FTP服务"></a>主机搭建FTP服务</h2><ol><li><p>打开控制面板，查询<code>功能</code>，点击<code>启用或关闭Windows功能</code><br> <img src="/2024/10/29/CreateFTP/1FTP-01.png">   </p></li><li><p>勾选<code>Internet Infermation Services</code>，<code>FTP服务器</code>并点击确认，随后等待重启<br> <img src="/2024/10/29/CreateFTP/1FTP-02.png" alt="功能" title="功能"></p></li><li><p>打开任务栏搜索框，搜索并打开<code>IIS</code><br> <img src="/2024/10/29/CreateFTP/1FTP-03.png"></p></li><li><p>在IIS界面，右键单击网站，点击添加FTP站点。<br>输入任意站点名称和共享文件夹地址,点击下一步<br> <img src="/2024/10/29/CreateFTP/1FTP-04.png"><br> <img src="/2024/10/29/CreateFTP/1FTP-13.png"></p></li><li><p>输入ip地址，如果有多个ip地址不知道选哪个，可以在右键单击网络图标，点击<code>网络和Internet设置</code>，查看自己的ip地址<br>端口使用默认端口21即可，SSL选择无SSL。<br> <img src="/2024/10/29/CreateFTP/1FTP-05.png"><br> <img src="/2024/10/29/CreateFTP/1FTP-14.png"><br> <img src="/2024/10/29/CreateFTP/1FTP-06.png"></p></li><li><p>身份验证勾选<code>匿名</code> <code>基本</code>，授权选择<code>所有用户</code>，权限自行勾选<code>读取</code>是可以下载<code>写入</code>是可以上传<br> <img src="/2024/10/29/CreateFTP/1FTP-07.png"></p></li><li><p>在文件资源管理器中输入 <a href="ftp://10.107.79.53/">ftp://10.107.79.53</a> (ftp:&#x2F;&#x2F;自己的ip地址)<br> <img src="/2024/10/29/CreateFTP/1FTP-01.gif"></p><blockquote><p>至此FTP已经搭建完成</p></blockquote></li></ol><h2 id="防火墙设置"><a href="#防火墙设置" class="headerlink" title="防火墙设置"></a>防火墙设置</h2><ol><li>打开防火墙，点击<code>允许应用通过防火墙</code><br> <img src="/2024/10/29/CreateFTP/1FTP-08.png"></li><li>先点击<code>更改设置</code>，找到<code>FTP</code>并勾选<br> <img src="/2024/10/29/CreateFTP/1FTP-09.png"></li><li>添加<code>&quot;C:\Windows\System32\svchost.exe&quot;</code>，即<code>Windows服务主进程</code><br> <img src="/2024/10/29/CreateFTP/1FTP-10.png"><br> <img src="/2024/10/29/CreateFTP/1FTP-11.png"></li><li>勾选<code>专用</code> <code>公用</code>，点击确定<br> <img src="/2024/10/29/CreateFTP/1FTP-12.png"></li></ol><p>防火墙设置完毕，现在局域网内的设备可以访问本机的FTP服务器，并可以下载上传。</p><hr><h1 id="连接测试-Radmin连接"><a href="#连接测试-Radmin连接" class="headerlink" title="连接测试(Radmin连接)"></a>连接测试(Radmin连接)</h1><blockquote><p>由于连接校园网并不在同一个ip下，于是尝试用其他软件代替。手机热点尝试过了也可以用<br>Radmin就是有一点不太好，可能网络会很卡，我和朋友基本上在500~1000延迟，只可以用来传图片玩玩，大一点的传输时间就很长了</p></blockquote><ol><li>在官网<a href="https://www.radmin-lan.cn/">下载RadminLAN软件</a><br> <img src="/2024/10/29/CreateFTP/1FTP-15.png"></li><li>打开RadminLAN，依次点击<code>网络-创建网络</code> 然后输入用户名和密码<br> <img src="/2024/10/29/CreateFTP/1FTP-16.png"></li><li>其他用户点击<code>网络-加入网络</code>输入刚才的用户名和密码，加入网络。(不过延迟真的很高)<br> <img src="/2024/10/29/CreateFTP/1FTP-17.png"></li><li>根据上述教程搭建FTP，ip地址为图示地址<br> <img src="/2024/10/29/CreateFTP/1FTP-18.png"></li><li>接下来主机就可以打开共享文件夹<code>ftp://26.165.27.130</code>或者在自己本地文件夹中添加文件，所有局域网内的用户均可以访问该地址来获取文件(如果没有就点一下刷新)<blockquote><p><code>ftp://26.165.27.130的文件一般不能直接打开，需要拖拽下载到自己电脑之后才能查看</code></p></blockquote> <img src="/2024/10/29/CreateFTP/1FTP-19.png"><br> 功能正常运行，可以进行传输。🥳</li></ol><hr><blockquote><p>参考资料</p><ol><li><a href="https://www.bilibili.com/video/BV1AZ4y1b7WU/?spm_id_from=333.880.my_history.page.click&vd_source=910d96431688f003370b14c02b2f5525">b站视频：快速搭建FTP服务器（局域网内文件共享） 【Windows系统 IIS】</a></li><li><a href="https://blog.csdn.net/weixin_46081669/article/details/114037504">csdn博客：windows10搭建FTP服务器，并允许其他电脑访问</a></li></ol></blockquote>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> FTP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
 </search>
