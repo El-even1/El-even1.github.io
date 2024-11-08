@@ -59,23 +59,24 @@
       </tags>
   </entry>
   <entry>
-    <title>Go语言学习-01</title>
-    <url>/2024/11/07/go-study1/</url>
+    <title>Golangstudy</title>
+    <url>/2024/11/08/Golangstudy/</url>
     <content><![CDATA[<h1 id="一、下载安装，配置环境"><a href="#一、下载安装，配置环境" class="headerlink" title="一、下载安装，配置环境"></a>一、下载安装，配置环境</h1><blockquote>
 <p>环境： windows11<br>编译器： vscode</p>
 </blockquote>
 <p>安装包下载地址： <a href="https://go.dev/dl/%E3%80%82">https://go.dev/dl/。</a><br>如果打不开可以使用这个地址：<a href="https://golang.google.cn/dl/%E3%80%82">https://golang.google.cn/dl/。</a></p>
-<p>下载<code>go1.23.3.windows-amd64.msi</code><br><img src="/2024/11/07/go-study1/go-1.png" alt="下载页面"></p>
-<p>下载完成之后，win+r 输入cmd打开命令行，输入<code>go version</code>来查看是否可以打印出go的版本，如果可以说明安装成功<br><img src="/2024/11/07/go-study1/go-2.png"></p>
+<p>下载<code>go1.23.3.windows-amd64.msi</code><br>    <img src="/2024/11/08/Golangstudy/go1.png" alt="下载页面"> </p>
+<p>下载完成之后，win+r 输入cmd打开命令行，输入<code>go version</code>来查看是否可以打印出go的版本，如果可以说明安装成功<br>    <img src="/2024/11/08/Golangstudy/go2.png"></p>
 <ol>
-<li>首先创建一个文件夹名为<code>go-get-started</code>，接着在这个文件夹中打开命令行，输入<code>go mod init github.com/自己的地址/go-get-started</code>，然后就会生成go.mod文件。<br><img src="/2024/11/07/go-study1/go-3.png"><br><img src="/2024/11/07/go-study1/go-4.png"></li>
-<li>打开vscode，因为vscode本身并不支持go语言，所以要下载插件。点击扩展，搜索go，点击下载<code>Go Team at Google</code><br><img src="/2024/11/07/go-study1/go-5.png"></li>
-<li>新建<code>main.go</code>文件，输入以下代码：</li>
-</ol>
-<figure class="highlight golang"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	fmt.Println(<span class="string">&quot;Hello, world!&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ol start="4">
-<li>按下<code>&quot;ctrl+shift+`</code> 打开终端，输入<code>go run main.go</code>来运行程序，如果一切顺利，应该会看到输出<code>Hello, world!</code><br><img src="/2024/11/07/go-study1/go-6.png"></li>
+<li><p>首先创建一个文件夹名为<code>go-get-started</code>，接着在这个文件夹中打开命令行，输入<code>go mod init github.com/自己的地址/go-get-started</code>，然后就会生成go.mod文件。<br> <img src="/2024/11/08/Golangstudy/go3.png"><br> <img src="/2024/11/08/Golangstudy/go4.png"></p>
+</li>
+<li><p>打开vscode，因为vscode本身并不支持go语言，所以要下载插件。点击扩展，搜索go，点击下载<code>Go Team at Google</code><br> <img src="/2024/11/08/Golangstudy/go5.png"></p>
+</li>
+<li><p>新建<code>main.go</code>文件，输入以下代码：</p>
+ <figure class="highlight golang"><table><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">&quot;fmt&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>  &#123;</span><br><span class="line">    fmt.Println(<span class="string">&quot;Hello, world!&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>按下<code>&quot;ctrl+shift+`</code> 打开终端，输入<code>go run main.go</code>来运行程序，如果一切顺利，应该会看到输出<code>Hello, world!</code><br> <img src="/2024/11/08/Golangstudy/go6.png"></p>
+</li>
 </ol>
 <blockquote>
 <p>持续更新…</p>
